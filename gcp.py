@@ -23,4 +23,4 @@ def detect_labels(path):
         print(label.description)
 
 
-detect_labels("C:\\Users\\kshit\\Downloads\\MangoHacks\\images\\A.png")
+# detect_labels("C:\\Users\\kshit\\Downloads\\MangoHacks\\images\\A.png")

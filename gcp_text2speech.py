@@ -3,6 +3,9 @@
 import argparse
 import io
 import re
+from pathlib import Path
+import os
+
 
 def detect_web(path):
     """Detects web annotations given an image."""
@@ -25,8 +28,7 @@ def detect_web(path):
     return guess_string
 
 
-# text1 = detect_web("C:\\Users\\kshit\\Downloads\\MangoHacks\\images\\A.png")
-text1 = detect_web("C:\\Users\\kshit\\Downloads\\MangoHacks\\images\\Mona_Lisa.jpg")
+
 
 
 
@@ -61,4 +63,15 @@ def text2speech(text1):
         out.write(response.audio_content)
         print('Audio content written to file "output.wav"')
 
-text2speech(text1)
+
+
+val = 0
+while True:
+    print("listening" , val)
+    val+=1
+    my_file = Path("C:\\Users\\kshit\\Downloads\\MangoHacks\\images\\Mona_Lisa.jpg")
+    if my_file.is_file():
+        # text1 = detect_web("C:\\Users\\kshit\\Downloads\\MangoHacks\\images\\A.png")
+        text1 = detect_web("C:\\Users\\kshit\\Downloads\\MangoHacks\\images\\Mona_Lisa.jpg")
+        text2speech(text1)
+        os.remove("C:\\Users\\kshit\\Downloads\\MangoHacks\\images\\Mona_Lisa.jpg")
